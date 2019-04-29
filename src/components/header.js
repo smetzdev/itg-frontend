@@ -1,9 +1,10 @@
 import React from "react"
+import Logo from "../images/logomitschrift.png"
 
 /** Component */
 const Header = () => (
   <header>
-    <h1>Logo</h1>
+    <img src={Logo} alt="It-Consulting Grossmann" />
     <a href="#kontakt">Kontakt</a>
   </header>
 )
