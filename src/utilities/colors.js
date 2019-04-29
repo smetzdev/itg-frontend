@@ -16,4 +16,7 @@ export const colors = {
     lighter: "#C8C7CC",
     lightest: "#F1F1F4",
   },
+  white: {
+    base: "#FFF",
+  },
 }
