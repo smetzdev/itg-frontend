@@ -8,8 +8,6 @@ const StyledHeader = styled.header`
   background-color: ${colors.primary.darker};
   ${FlexContainer} {
     height: 100px;
-    justify-content: space-between;
-    align-items: center;
   }
   img {
     width: 210px;
