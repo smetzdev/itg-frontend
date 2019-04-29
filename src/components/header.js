@@ -1,12 +1,30 @@
 import React from "react"
+import styled from "styled-components"
 import Logo from "../images/logomitschrift.png"
+import { colors } from "../utilities"
+import { SecondaryButton, FlexContainer } from "../elements"
+
+const StyledHeader = styled.header`
+  background-color: ${colors.primary.darker};
+  ${FlexContainer} {
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  img {
+    width: 210px;
+    height: auto;
+  }
+`
 
 /** Component */
 const Header = () => (
-  <header>
-    <img src={Logo} alt="It-Consulting Grossmann" />
-    <a href="#kontakt">Kontakt</a>
-  </header>
+  <StyledHeader>
+    <FlexContainer>
+      <img src={Logo} alt="It-Consulting Grossmann" />
+      <SecondaryButton>Kontakt</SecondaryButton>
+    </FlexContainer>
+  </StyledHeader>
 )
 
 export default Header
