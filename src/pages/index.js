@@ -1,7 +1,7 @@
 import React from "react"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Hero from "../components/hero"
 
 const IndexPage = () => (
   <Layout>
@@ -9,7 +9,7 @@ const IndexPage = () => (
       title="IT-Consulting Grossmann"
       keywords={[`It-Consulting`, `Grossmann`, `Frank Grossmann`]}
     />
-    <h1>Willkommen</h1>
+    <Hero />
   </Layout>
 )
 
