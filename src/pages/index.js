@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import Hero from "../components/hero"
 import Main from "../components/main"
 import Services from "../components/services"
+import Contact from "../components/contact"
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <Hero />
     <Main />
     <Services />
+    <Contact />
   </Layout>
 )
 
