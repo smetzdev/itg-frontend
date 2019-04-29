@@ -1,5 +1,5 @@
 import React from "react"
-import Frank from "../images/passfoto_cutted.png"
+import Frank from "../../images/passfoto_cutted.png"
 
 /** Component */
 const Hero = () => (
