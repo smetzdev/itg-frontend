@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Logo from "../images/logomitschrift.png"
-import { colors } from "../utilities"
+import { colors, screenSizes } from "../utilities"
 import { SecondaryButton, FlexContainer } from "../elements"
 
 /** Component */
@@ -21,7 +21,10 @@ const StyledHeader = styled.header`
     height: 100px;
   }
   img {
-    width: 210px;
+    width: 150px;
+    @media screen and (min-width: ${screenSizes.medium}px) {
+      width: 210px;
+    }
     height: auto;
   }
 `
