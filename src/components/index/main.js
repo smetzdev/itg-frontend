@@ -59,7 +59,9 @@ const StyledMain = styled.main`
     text-transform: ${typo.headlines.medium.transform};
   }
   @media screen and (min-width: ${screenSizes.medium}px) {
-    column-count: 2;
+    article {
+      column-count: 2;
+    }
   }
 `
 
