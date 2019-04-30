@@ -40,14 +40,16 @@ const StyledHero = styled.section`
   }
   img {
     align-self: flex-end;
-    width: 75%;
+    max-width: 100%;
     height: auto;
   }
-  @media screen and (min-width: ${screenSizes.medium}px) {
+  @media screen and (min-width: ${screenSizes.small}px) {
     h1 {
       font-size: ${size}px;
       align-self: center;
     }
+  }
+  @media screen and (min-width: ${screenSizes.big}px) {
     img {
       width: 434px;
     }
