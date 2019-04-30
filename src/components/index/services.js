@@ -48,6 +48,7 @@ const StyledServices = styled.section`
   svg {
     width: 120px;
     height: 120px;
+    margin-bottom: 12px;
     .primary {
       fill: ${colors.primary.darker};
     }
