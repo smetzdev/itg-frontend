@@ -48,6 +48,7 @@ const StyledMain = styled.main`
     p {
       margin-top: 0;
       hyphens: auto;
+      font-size: ${typo.text.bigger.size}px;
       &:nth-of-type(even) {
         margin-bottom: 0;
       }
@@ -56,6 +57,7 @@ const StyledMain = styled.main`
   h2 {
     color: ${colors.grey.darker};
     font-size: ${typo.headlines.medium.size}px;
+    text-transform: ${typo.headlines.medium.transform};
     margin-top: 0;
     margin-bottom: 10px;
   }
