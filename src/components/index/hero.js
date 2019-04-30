@@ -5,6 +5,22 @@ import { typo, colors } from "../../utilities"
 import Frank from "../../images/passfoto_cutted.png"
 import BackgroundImage from "../../images/header_background_colored.jpg"
 
+
+/** Component */
+const Hero = () => (
+  <StyledHero>
+    <FlexContainer>
+      <h1>
+        IT-Consulting
+        <br />
+        Frank Grossmann
+      </h1>
+      <img src={Frank} alt="Frank Grossmann" />
+    </FlexContainer>
+  </StyledHero>
+)
+
+/** Styling */
 const { weight, size, transform } = typo.headlines.big
 
 const StyledHero = styled.section`
@@ -26,19 +42,4 @@ const StyledHero = styled.section`
     height: auto;
   }
 `
-
-/** Component */
-const Hero = () => (
-  <StyledHero>
-    <FlexContainer>
-      <h1>
-        IT-Consulting
-        <br />
-        Frank Grossmann
-      </h1>
-      <img src={Frank} alt="Frank Grossmann" />
-    </FlexContainer>
-  </StyledHero>
-)
-
 export default Hero
