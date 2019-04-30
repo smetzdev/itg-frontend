@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { FlexContainer } from "../../elements"
-import { colors, typo, spacing } from "../../utilities"
+import { colors, typo, spacing, screenSizes } from "../../utilities"
 import SoftwareIcon from "../../images/icons/icon-code.inline.svg"
 import SecurityIcon from "../../images/icons/icon-security-check.inline.svg"
 import AdminstrationIcon from "../../images/icons/icon-server.inline.svg"
@@ -59,6 +59,9 @@ const StyledServices = styled.section`
   article {
     text-align: center;
     max-width: 323px;
+    &:not(:last-of-type) {
+      margin-bottom: ${spacing.half / 2}px;
+    }
   }
   h3 {
     font-size: ${typo.headlines.card.size}px;
@@ -67,6 +70,11 @@ const StyledServices = styled.section`
   p {
     margin: 0;
     font-size: 18px;
+  }
+  @media screen and (min-width: ${screenSizes.medium}px) {
+    article:not(:last-of-type) {
+      margin-bottom: 0;
+    }
   }
 `
 
