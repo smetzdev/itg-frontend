@@ -1,6 +1,6 @@
 export const screenSizes = {
   small: 720,
-  medium: 980,
-  big: 1200,
+  medium: 850,
+  big: 1100,
   huge: 1400,
 }

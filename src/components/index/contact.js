@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Form from "./form"
 import CircuitBG from "../../images/circuit-board.svg"
 import { FlexContainer } from "../../elements"
-import { colors, typo, spacing } from "../../utilities"
+import { colors, typo, spacing, screenSizes } from "../../utilities"
 
 /** Component */
 const Contact = () => (
@@ -36,9 +36,8 @@ const StyledContact = styled.div`
   padding: ${spacing.half}px 0;
   background-image: url(${CircuitBG});
   section {
-    flex: 1;
+    order: 1;
     align-self: flex-start;
-    padding-left: ${spacing.half - 30}px;
   }
   h2 {
     font-size: ${typo.headlines.medium.size}px;
@@ -51,6 +50,16 @@ const StyledContact = styled.div`
   }
   span {
     color: ${colors.grey.base};
+  }
+  ${FlexContainer} {
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: ${screenSizes.medium}px) {
+    order: 0;
+    section {
+      flex: 1;
+      padding-left: ${spacing.half - 30}px;
+    }
   }
 `
 

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { PrimaryButton } from "../../elements"
-import { colors, typo } from "../../utilities"
+import { colors, typo, screenSizes, spacing } from "../../utilities"
 
 /** Component */
 const Form = () => (
@@ -36,14 +36,16 @@ const Form = () => (
 
 /** Styling */
 const StyledForm = styled.form`
-  flex: 2;
+  margin-top: ${spacing.half / 2}px;
+  width: 100%;
+  order: 2;
   input {
     &:first-child {
-      margin-right: 16px;
+      margin-bottom: 16px;
     }
     &[type="text"],
     &[type="email"] {
-      width: calc(50% - 8px);
+      width: 100%;
     }
   }
   textarea {
@@ -76,6 +78,21 @@ const StyledForm = styled.form`
       color: ${colors.primary.darker};
     }
     color: ${colors.primary.darker};
+  }
+  @media screen and (min-width: ${screenSizes.medium}px) {
+    margin-top: 0;
+    flex: 2;
+    order: 0;
+    input {
+      &:first-child {
+        margin-bottom: 0;
+        margin-right: 16px;
+      }
+      &[type="text"],
+      &[type="email"] {
+        width: calc(50% - 8px);
+      }
+    }
   }
 `
 
