@@ -7,7 +7,7 @@ import { colors, typo, spacing, screenSizes } from "../../utilities"
 
 /** Component */
 const Contact = () => (
-  <StyledContact>
+  <StyledContact id="contact">
     <FlexContainer>
       <Form />
       <section>
