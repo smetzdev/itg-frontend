@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Container } from "../../elements"
-import { spacing, colors, typo } from "../../utilities"
+import { spacing, colors, typo, screenSizes } from "../../utilities"
 import CircuitBG from "../../images/circuit-board.svg"
 
 /** Component */
@@ -44,7 +44,6 @@ const StyledMain = styled.main`
   padding: ${spacing.half}px 0;
   background-image: url(${CircuitBG});
   article {
-    column-count: 2;
     p {
       margin-top: 0;
       hyphens: auto;
@@ -58,6 +57,9 @@ const StyledMain = styled.main`
     color: ${colors.grey.darker};
     font-size: ${typo.headlines.medium.size}px;
     text-transform: ${typo.headlines.medium.transform};
+  }
+  @media screen and (min-width: ${screenSizes.medium}px) {
+    column-count: 2;
   }
 `
 
