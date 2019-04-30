@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import { colors, typo } from "../utilities"
+import { colors, typo, screenSizes } from "../utilities"
 
 export const Button = styled.button`
-  height: 55px;
-  width: 175px;
+  padding: 10px 15px;
   display: inline-block;
   background-color: transparent;
   text-decoration: none;
@@ -13,6 +12,11 @@ export const Button = styled.button`
   text-align: center;
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
   cursor: pointer;
+  @media screen and (min-width: ${screenSizes.small}px) {
+    height: 55px;
+    width: 175px;
+    padding: 0;
+  }
 `
 export const PrimaryButton = styled(Button)`
   background-color: ${colors.primary.darker};
