@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import { typo } from "../utilities"
+import { typo, colors } from "../utilities"
 
 export const GlobalStyle = createGlobalStyle`
   *,*:before,*:after{
@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: ${typo.text.std.size}px;
+    color: ${colors.grey.darkest}
   }
   h1,h2,h3,h4{
     font-weight: 700;
