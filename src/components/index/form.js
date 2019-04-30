@@ -7,9 +7,14 @@ import { colors, typo, screenSizes, spacing } from "../../utilities"
 const Form = () => (
   <StyledForm action="#">
     <div className="form-row">
-      <input class="form-styling" type="text" name="name" placeholder="Name" />
       <input
-        class="form-styling"
+        className="form-styling"
+        type="text"
+        name="name"
+        placeholder="Name"
+      />
+      <input
+        className="form-styling"
         type="email"
         name="email"
         placeholder="E-Mail"
@@ -17,7 +22,7 @@ const Form = () => (
     </div>
     <div className="form-row">
       <textarea
-        class="form-styling"
+        className="form-styling"
         name="message"
         placeholder="Ihre Nachricht"
       />
