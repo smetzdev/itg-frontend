@@ -1,36 +1,62 @@
 import React from "react"
+import styled from "styled-components"
+import Form from "./form"
+import CircuitBG from "../../images/circuit-board.svg"
+import { FlexContainer, PrimaryButton } from "../../elements"
+import { colors, typo, spacing } from "../../utilities"
 
 /** Component */
 const Contact = () => (
-  <div>
-    <form action="#">
-      <input type="text" name="name" placholder="Name" />
-      <input type="email" name="email" placeholder="E-Mail" />
-      <textarea name="message" placeholder="Ihre Nachricht" />
-      <input type="checkbox" name="check_privacy" id="check_privacy" />
-      <label htmlFor="check_privacy">
-        Ich habe die Datenschutzerklärung gelesen und akzeptiert.
-      </label>
-      <input type="submit" value="Senden" />
-    </form>
-    <section>
-      <h2>Kontakt</h2>
-      <h3>It-Consulting Grossmann</h3>
-      <p>
-        Stockland 39
-        <br />
-        66709 Weiskirchen-Konfeld
-      </p>
+  <StyledContact>
+    <FlexContainer>
+      <Form />
+      <section>
+        <h2>Kontakt</h2>
+        <h3>IT-Consulting Grossmann</h3>
+        <p>
+          Stockland 39
+          <br />
+          66709 Weiskirchen-Konfeld
+        </p>
 
-      <p>
-        Tel: +49 (0) 6876 791057
-        <br />
-        Fax: +49(0) 6876 791068
-      </p>
+        <p>
+          <span>Tel:</span> +49 (0) 6876 791057
+          <br />
+          <span>Fax:</span> +49(0) 6876 791068
+        </p>
 
-      <p>it-consulting-grossmann@t-online.de</p>
-    </section>
-  </div>
+        <p>it-consulting-grossmann@t-online.de</p>
+      </section>
+    </FlexContainer>
+  </StyledContact>
 )
+
+/** Styling */
+const StyledContact = styled.div`
+  padding: ${spacing.half}px 0;
+  background-image: url(${CircuitBG});
+  section {
+    flex: 1;
+    align-self: flex-start;
+    padding-left: ${spacing.half - 30}px;
+  }
+  h2 {
+    font-size: ${typo.headlines.medium.size}px;
+    text-transform: ${typo.headlines.medium.transform};
+    color: ${colors.grey.darker};
+  }
+  h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  h2,
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  span {
+    color: ${colors.grey.base};
+  }
+`
 
 export default Contact
