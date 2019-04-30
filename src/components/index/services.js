@@ -1,9 +1,9 @@
 import React from "react"
 
 /** Icon Imports */
-import Software from "../../images/icons/icon-code.svg"
-import Security from "../../images/icons/icon-security-check.svg"
-import Adminstration from "../../images/icons/icon-server.svg"
+import Software from "../../images/icons/icon-code.inline.svg"
+import Security from "../../images/icons/icon-security-check.inline.svg"
+import Adminstration from "../../images/icons/icon-server.inline.svg"
 
 /** Component */
 const Services = () => (
