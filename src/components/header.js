@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { animateScroll } from "react-scroll"
 import Logo from "../images/logomitschrift.png"
 import { colors, screenSizes } from "../utilities"
 import { SecondaryButton, FlexContainer } from "../elements"
@@ -9,10 +10,16 @@ const Header = () => (
   <StyledHeader>
     <FlexContainer>
       <img src={Logo} alt="It-Consulting Grossmann" />
-      <SecondaryButton>Kontakt</SecondaryButton>
+      <SecondaryButton onClick={scrollToContact}>Kontakt</SecondaryButton>
     </FlexContainer>
   </StyledHeader>
 )
+
+/** Scroll-Function */
+const scrollToContact = () => {
+  const contactElement = document.getElementById("contact")
+  if (contactElement) animateScroll.scrollTo(contactElement.offsetTop);
+}
 
 /** Styling */
 const StyledHeader = styled.header`
