@@ -58,8 +58,6 @@ const StyledMain = styled.main`
     color: ${colors.grey.darker};
     font-size: ${typo.headlines.medium.size}px;
     text-transform: ${typo.headlines.medium.transform};
-    margin-top: 0;
-    margin-bottom: 10px;
   }
 `
 

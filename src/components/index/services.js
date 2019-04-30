@@ -62,7 +62,6 @@ const StyledServices = styled.section`
   h3 {
     font-size: ${typo.headlines.card.size}px;
     text-transform: ${typo.headlines.card.transform};
-    margin-bottom: 10px;
   }
   p {
     margin: 0;

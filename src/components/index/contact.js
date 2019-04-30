@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Form from "./form"
 import CircuitBG from "../../images/circuit-board.svg"
-import { FlexContainer, PrimaryButton } from "../../elements"
+import { FlexContainer } from "../../elements"
 import { colors, typo, spacing } from "../../utilities"
 
 /** Component */
@@ -48,11 +48,6 @@ const StyledContact = styled.div`
   h3 {
     font-size: 18px;
     text-transform: uppercase;
-  }
-  h2,
-  h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
   }
   span {
     color: ${colors.grey.base};
