@@ -44,6 +44,7 @@ const StyledServices = styled.section`
   background-color: ${colors.grey.lightest};
   ${FlexContainer} {
     flex-wrap: wrap;
+    justify-content: center;
   }
   svg {
     width: 120px;
@@ -58,7 +59,7 @@ const StyledServices = styled.section`
   }
   article {
     text-align: center;
-    max-width: 323px;
+    max-width: calc(100%-30px);
     &:not(:last-of-type) {
       margin-bottom: ${spacing.half / 2}px;
     }
@@ -71,9 +72,20 @@ const StyledServices = styled.section`
     margin: 0;
     font-size: 18px;
   }
-  @media screen and (min-width: ${screenSizes.medium}px) {
-    article:not(:last-of-type) {
-      margin-bottom: 0;
+  @media screen and (min-width: ${screenSizes.small}px) {
+    article {
+      max-width: 60%;
+    }
+  }
+  @media screen and (min-width: ${screenSizes.big - 80}px) {
+    article {
+      max-width: 323px;
+      &:not(:last-of-type) {
+        margin-bottom: 0;
+      }
+    }
+    ${FlexContainer} {
+      justify-content: space-between;
     }
   }
 `
