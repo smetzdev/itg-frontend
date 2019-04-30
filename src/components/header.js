@@ -4,6 +4,17 @@ import Logo from "../images/logomitschrift.png"
 import { colors } from "../utilities"
 import { SecondaryButton, FlexContainer } from "../elements"
 
+/** Component */
+const Header = () => (
+  <StyledHeader>
+    <FlexContainer>
+      <img src={Logo} alt="It-Consulting Grossmann" />
+      <SecondaryButton>Kontakt</SecondaryButton>
+    </FlexContainer>
+  </StyledHeader>
+)
+
+/** Styling */
 const StyledHeader = styled.header`
   background-color: ${colors.primary.darker};
   ${FlexContainer} {
@@ -14,15 +25,5 @@ const StyledHeader = styled.header`
     height: auto;
   }
 `
-
-/** Component */
-const Header = () => (
-  <StyledHeader>
-    <FlexContainer>
-      <img src={Logo} alt="It-Consulting Grossmann" />
-      <SecondaryButton>Kontakt</SecondaryButton>
-    </FlexContainer>
-  </StyledHeader>
-)
 
 export default Header
