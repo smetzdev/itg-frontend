@@ -7,7 +7,7 @@ export const typo = {
     },
     bigger: {
       weight: "regular",
-      size: 24,
+      size: 20,
       transform: false,
     },
     footer: {
@@ -24,17 +24,17 @@ export const typo = {
   headlines: {
     big: {
       weight: "bold",
-      size: 64,
+      size: 54,
       transform: "uppercase",
     },
     medium: {
       weight: "bold",
-      size: 36,
+      size: 32,
       transform: "uppercase",
     },
     card: {
       weight: "bold",
-      size: 28,
+      size: 24,
       transform: "uppercase",
     },
   },
