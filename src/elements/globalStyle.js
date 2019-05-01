@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${typo.text.std.size}px;
     color: ${colors.grey.darkest}
   }
-  h1,h2,h3,h4{
+  h1,h2,h3,h4,h5,h6{
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 10px;
