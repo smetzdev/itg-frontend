@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import { animateScroll } from "react-scroll"
 import Logo from "../images/logomitschrift.png"
@@ -6,11 +7,15 @@ import { colors, screenSizes } from "../utilities"
 import { SecondaryButton, FlexContainer } from "../elements"
 
 /** Component */
-const Header = () => (
+const Header = ({ hasContact }) => (
   <StyledHeader>
     <FlexContainer>
-      <img src={Logo} alt="It-Consulting Grossmann" />
-      <SecondaryButton onClick={scrollToContact}>Kontakt</SecondaryButton>
+      <Link to="/">
+        <img src={Logo} alt="It-Consulting Grossmann" />
+      </Link>
+      {hasContact && (
+        <SecondaryButton onClick={scrollToContact}>Kontakt</SecondaryButton>
+      )}
     </FlexContainer>
   </StyledHeader>
 )
@@ -18,7 +23,7 @@ const Header = () => (
 /** Scroll-Function */
 const scrollToContact = () => {
   const contactElement = document.getElementById("contact")
-  if (contactElement) animateScroll.scrollTo(contactElement.offsetTop);
+  if (contactElement) animateScroll.scrollTo(contactElement.offsetTop)
 }
 
 /** Styling */
