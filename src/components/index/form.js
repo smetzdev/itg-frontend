@@ -5,7 +5,7 @@ import { colors, typo, screenSizes, spacing } from "../../utilities"
 
 /** Component */
 const Form = () => (
-  <StyledForm action="#">
+  <StyledForm name="contact" method="POST" data-netlify="true">
     <div className="form-row">
       <input
         className="form-styling"
