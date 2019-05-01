@@ -12,12 +12,14 @@ const Form = () => (
         type="text"
         name="name"
         placeholder="Name"
+        required
       />
       <input
         className="form-styling"
         type="email"
         name="email"
         placeholder="E-Mail"
+        required
       />
     </div>
     <div className="form-row">
@@ -25,11 +27,17 @@ const Form = () => (
         className="form-styling"
         name="message"
         placeholder="Ihre Nachricht"
+        required
       />
     </div>
     <div className="form-row">
       <div>
-        <input type="checkbox" name="check_privacy" id="check_privacy" />
+        <input
+          type="checkbox"
+          name="check_privacy"
+          id="check_privacy"
+          required
+        />
         <label htmlFor="check_privacy">
           Ich habe die Datenschutzerklärung gelesen und akzeptiert.
         </label>
