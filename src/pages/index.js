@@ -7,7 +7,7 @@ import Services from "../components/index/services"
 import Contact from "../components/index/contact"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout hasContact>
     <SEO
       title="IT-Consulting Grossmann"
       keywords={[`It-Consulting`, `Grossmann`, `Frank Grossmann`]}

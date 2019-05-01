@@ -5,18 +5,23 @@ import Footer from "./footer"
 import { GlobalStyle } from "../elements"
 
 /** Component */
-const Layout = ({ children }) => (
+const Layout = ({ children, hasContact }) => (
   <>
     <GlobalStyle />
-    <Header />
+    <Header hasContact={hasContact} />
     {children}
     <Footer />
   </>
 )
 
-/** PropTypes */
+/** PropTypes + defaultProps */
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  hasContact: PropTypes.bool,
+}
+
+Layout.defaultProps = {
+  hasContact: false,
 }
 
 export default Layout

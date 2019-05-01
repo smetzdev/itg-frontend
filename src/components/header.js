@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { animateScroll } from "react-scroll"
@@ -40,5 +41,10 @@ const StyledHeader = styled.header`
     height: auto;
   }
 `
+
+/** PropTypes */
+Layout.propTypes = {
+  hasContact: PropTypes.bool,
+}
 
 export default Header
