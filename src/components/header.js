@@ -43,7 +43,7 @@ const StyledHeader = styled.header`
 `
 
 /** PropTypes */
-Layout.propTypes = {
+Header.propTypes = {
   hasContact: PropTypes.bool,
 }
 
