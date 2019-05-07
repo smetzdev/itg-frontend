@@ -24,6 +24,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `backend.it-consulting-grossmann.de`,
+        protocol: `http`,
+        hostingWPCOM: false,
+        useACF: false,
+        includedRoutes: [`**/pages`, `**/options`],
+      },
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
