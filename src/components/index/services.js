@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { FlexContainer } from "../../elements"
 import { colors, typo, spacing, screenSizes } from "../../utilities"
@@ -7,37 +8,55 @@ import SecurityIcon from "../../images/icons/icon-security-check.inline.svg"
 import AdminstrationIcon from "../../images/icons/icon-server.inline.svg"
 
 /** Component */
-const Services = () => (
-  <StyledServices>
-    <FlexContainer>
-      <article>
-        <SoftwareIcon />
-        <h3>Software</h3>
-        <p>
-          Unsere kundenspezifischen Softwarelösungen werden nach Ihrem
-          Leistungsanspruch designt.
-        </p>
-      </article>
-      <article>
-        <SecurityIcon />
-        <h3>Sicherheit</h3>
-        <p>
-          Gemeinsam mit Ihnen ermitteln wir Ihre Sicherheitsanforderungen und
-          setzen Diese um.
-        </p>
-      </article>
-      <article>
-        <AdminstrationIcon />
-        <h3>Administration</h3>
-        <p>
-          Wir bieten Ihnen eine professionelle Adminstration von Servern,
-          Storage und Netzen.
-        </p>
-      </article>
-    </FlexContainer>
-  </StyledServices>
-)
+const Services = () => {
+  // Query
+  const {
+    wordpressPage: {
+      acf: { alle_leistungen },
+    },
+  } = useStaticQuery(
+    graphql`
+      query ServicesQuery {
+        wordpressPage(wordpress_id: { eq: 6 }) {
+          acf {
+            alle_leistungen {
+              icon
+              uberschrift
+              text
+            }
+          }
+        }
+      }
+    `
+  )
 
+  // IconList
+  const icons = {
+    code: SoftwareIcon,
+    "security-check": SecurityIcon,
+    server: AdminstrationIcon,
+  }
+
+  // Render
+  return (
+    <StyledServices>
+      <FlexContainer>
+        {alle_leistungen.map(leistung => {
+          const Icon = icons[leistung.icon]
+          return (
+            <article>
+              <Icon />
+              <h3>{leistung.uberschrift}</h3>
+              <p>{leistung.text}</p>
+            </article>
+          )
+        })}
+      </FlexContainer>
+    </StyledServices>
+  )
+}
+
+/** Styling */
 const StyledServices = styled.section`
   padding-top: ${spacing.half - 18}px;
   padding-bottom: ${spacing.half}px;
