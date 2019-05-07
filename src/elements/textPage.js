@@ -7,7 +7,7 @@ import CircuitBG from "../images/circuit-board.svg"
 /** Component */
 const TextPage = ({ children }) => (
   <StyledTextPage>
-    <Container>{children}</Container>
+    <Container dangerouslySetInnerHTML={{ __html: children }} />
   </StyledTextPage>
 )
 
