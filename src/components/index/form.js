@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Modal from "../modal"
 import { PrimaryButton } from "../../elements"
 import { colors, typo, screenSizes, spacing } from "../../utilities"
+import { PongSpinner } from "react-spinners-kit"
 
 /** Component */
 const Form = () => {
@@ -19,10 +20,16 @@ const Form = () => {
   const [modalState, setModalState] = useState(false)
   const [modalMessage, setModalMessage] = useState("")
 
+  // SpinnerState
+  const [isLoading, setIsLoading] = useState(false)
+
   // Form Submission
   const handleSubmit = async event => {
     // Prevent Default
     event.preventDefault()
+
+    // AcitviateLoading State
+    setIsLoading(true)
 
     // Setup RequestData
     const API_URL = `${
@@ -45,6 +52,9 @@ const Form = () => {
 
     // Clear Form on Success
     if (data.success) setFormState(initialFormState)
+
+    // Hide Loading Status
+    setIsLoading(false)
 
     // Show Modal
     setModalMessage(data.message)
@@ -109,7 +119,11 @@ const Form = () => {
             Ich habe die Datenschutzerklärung gelesen und akzeptiert.
           </label>
         </div>
-        <PrimaryButton as="input" type="submit" value="Senden" />
+        {isLoading ? (
+          <PongSpinner color={colors.primary.darker} size={97} />
+        ) : (
+          <PrimaryButton as="input" type="submit" value="Senden" />
+        )}
       </div>
       <Modal
         show={modalState}
