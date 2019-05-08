@@ -32,7 +32,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         baseUrl: process.env.API_DOMAIN,
-        protocol: `http`,
+        protocol: process.env.API_PROTOCOL,
         hostingWPCOM: false,
         useACF: false,
         includedRoutes: [`**/pages`, `**/options`],
