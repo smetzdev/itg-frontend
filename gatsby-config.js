@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: process.env.API_URL,
+        baseUrl: process.env.API_DOMAIN,
         protocol: `http`,
         hostingWPCOM: false,
         useACF: false,
