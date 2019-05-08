@@ -1,51 +1,110 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { PrimaryButton } from "../../elements"
 import { colors, typo, screenSizes, spacing } from "../../utilities"
 
 /** Component */
-const Form = () => (
-  <StyledForm name="contact" method="POST" data-netlify="true">
-    <div className="form-row">
-      <input
-        className="form-styling"
-        type="text"
-        name="name"
-        placeholder="Name"
-        required
-      />
-      <input
-        className="form-styling"
-        type="email"
-        name="email"
-        placeholder="E-Mail"
-        required
-      />
-    </div>
-    <div className="form-row">
-      <textarea
-        className="form-styling"
-        name="message"
-        placeholder="Ihre Nachricht"
-        required
-      />
-    </div>
-    <div className="form-row">
-      <div>
+const Form = () => {
+  // FormState with HooksAPI
+  const initialFormState = {
+    name: "",
+    email: "",
+    message: "",
+    check_privacy: false,
+  }
+  const [formState, setFormState] = useState(initialFormState)
+
+  // Form Submission
+  const handleSubmit = async event => {
+    // Prevent Default
+    event.preventDefault()
+
+    // Setup RequestData
+    const API_URL = `${
+      process.env.GATSBY_HWPG_URL
+    }/wp-json/hwpgrossmann/v2/submit`
+    const reqObject = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...formState,
+        api_key: process.env.GATSBY_HWPG_API_KEY,
+      }),
+    }
+
+    // Fetch Request
+    const response = await fetch(API_URL, reqObject)
+    const data = await response.json()
+
+    // Clear Form on Success
+    if (data.success) setFormState(initialFormState)
+  }
+
+  // Render
+  return (
+    <StyledForm name="contact" method="POST" onSubmit={handleSubmit}>
+      <div className="form-row">
         <input
-          type="checkbox"
-          name="check_privacy"
-          id="check_privacy"
+          className="form-styling"
+          type="text"
+          name="name"
+          value={formState.name}
+          onChange={event =>
+            setFormState({ ...formState, name: event.target.value })
+          }
+          placeholder="Name"
           required
         />
-        <label htmlFor="check_privacy">
-          Ich habe die Datenschutzerklärung gelesen und akzeptiert.
-        </label>
+        <input
+          className="form-styling"
+          type="email"
+          name="email"
+          value={formState.email}
+          onChange={event =>
+            setFormState({ ...formState, email: event.target.value })
+          }
+          placeholder="E-Mail"
+          required
+        />
       </div>
-      <PrimaryButton as="input" type="submit" value="Senden" />
-    </div>
-  </StyledForm>
-)
+      <div className="form-row">
+        <textarea
+          className="form-styling"
+          name="message"
+          value={formState.message}
+          onChange={event =>
+            setFormState({ ...formState, message: event.target.value })
+          }
+          placeholder="Ihre Nachricht"
+          required
+        />
+      </div>
+      <div className="form-row">
+        <div>
+          <input
+            type="checkbox"
+            name="check_privacy"
+            checked={formState.check_privacy}
+            onChange={event =>
+              setFormState({
+                ...formState,
+                check_privacy: event.target.checked,
+              })
+            }
+            id="check_privacy"
+            required
+          />
+          <label htmlFor="check_privacy">
+            Ich habe die Datenschutzerklärung gelesen und akzeptiert.
+          </label>
+        </div>
+        <PrimaryButton as="input" type="submit" value="Senden" />
+      </div>
+    </StyledForm>
+  )
+}
 
 /** Styling */
 const StyledForm = styled.form`
