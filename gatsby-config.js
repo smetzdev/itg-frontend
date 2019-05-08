@@ -1,3 +1,8 @@
+// ENV VARS
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -26,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: `backend.it-consulting-grossmann.de`,
+        baseUrl: process.env.API_URL,
         protocol: `http`,
         hostingWPCOM: false,
         useACF: false,

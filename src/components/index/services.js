@@ -41,10 +41,10 @@ const Services = () => {
   return (
     <StyledServices>
       <FlexContainer>
-        {alle_leistungen.map(leistung => {
+        {alle_leistungen.map((leistung, index) => {
           const Icon = icons[leistung.icon]
           return (
-            <article>
+            <article key={`service-${index}`}>
               <Icon />
               <h3>{leistung.uberschrift}</h3>
               <p>{leistung.text}</p>
