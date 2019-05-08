@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
+import Modal from "../modal"
 import { PrimaryButton } from "../../elements"
 import { colors, typo, screenSizes, spacing } from "../../utilities"
 
@@ -13,6 +14,10 @@ const Form = () => {
     check_privacy: false,
   }
   const [formState, setFormState] = useState(initialFormState)
+
+  // Modal State
+  const [modalState, setModalState] = useState(false)
+  const [modalMessage, setModalMessage] = useState("")
 
   // Form Submission
   const handleSubmit = async event => {
@@ -40,6 +45,10 @@ const Form = () => {
 
     // Clear Form on Success
     if (data.success) setFormState(initialFormState)
+
+    // Show Modal
+    setModalMessage(data.message)
+    setModalState(true)
   }
 
   // Render
@@ -102,6 +111,11 @@ const Form = () => {
         </div>
         <PrimaryButton as="input" type="submit" value="Senden" />
       </div>
+      <Modal
+        show={modalState}
+        message={modalMessage}
+        setModalState={setModalState}
+      />
     </StyledForm>
   )
 }
