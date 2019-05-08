@@ -1,6 +1,7 @@
 import TextPage from "./textPage"
+import Portal from "./portal"
 
-export { TextPage }
+export { TextPage, Portal }
 
 export * from "./button"
 export * from "./container"
