@@ -173,8 +173,8 @@ const StyledForm = styled.form`
     border: none;
     padding: 17px;
     font-size: ${typo.text.std.size}px;
-    text-transform: uppercase;
     &::-webkit-input-placeholder {
+      text-transform: uppercase;
       color: ${colors.primary.darker};
     }
     color: ${colors.primary.darker};
