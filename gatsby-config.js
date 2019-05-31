@@ -6,7 +6,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Frank Grossmann IT Consulting`,
-    description: `Ihr IT Profi`,
+    description: `Software, Sicherheit, Administration - von Ihrem IT-Profi`,
     author: `@r3sMetz`,
   },
   plugins: [
@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `frank-grossmann`,
+        short_name: `fg`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
